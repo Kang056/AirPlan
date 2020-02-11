@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Air-Plan | 商品管理 - 查詢商品</title>
+    <link rel="Shortcut Icon" type="img/x-icon" href="./img/share/logo_2.png" >
+    <!-- Icons-->
+    <!-- <link href="../node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"> -->
+
+    <!-- Main styles for this application-->
+    <link href="css/bg_main.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <!-- top_header -->
+    <header class="app-header navbar">
+  <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="./bg_index.html">
+    <img class="navbar-brand-full" src="./img/share/LOGO.png" height="45" alt="Logo">
+  </a>
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#">
+        登出
+        <!-- <i class="icon-bell"></i>
+          <span class="badge badge-pill badge-danger">5</span> -->
+      </a>
+    </li>
+    <li class="nav-item dropdown mr-4">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <img class="img-avatar" src="./img/background/bob.jpg" alt="admin@bootstrapmaster.com">
+      </a>
+      <!-- <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-header text-center">
+          <strong>Settings</strong>
+        </div>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-wrench"></i> Settings</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-shield"></i> Lock Account</a>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-lock"></i> Logout</a>
+      </div> -->
+    </li>
+  </ul>
+</header>
+    <div class="app-body">
+        <div class="sidebar">
+            <!-- sidebar menu-->
+            <nav class="sidebar-nav">
+  <ul class="nav">
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon icon-people"></i> 會員管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_member.html" id="member">查詢會員資料</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_buy.html" id="buy">查詢消費紀錄</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_write.html" id="write">查詢寫信紀錄</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_give.html" id="give">查詢打賞紀錄</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon cui-cart"></i> 商品管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_productSearch.html" id="prodSearch">查詢商品</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_productModify.html" id="prodModify">修改商品</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon icon-ban"></i> 不當內容檢舉管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_banArticle.html" id="banArticle">被檢舉信件文章</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_banComment.html" id="banComment">被檢舉信件留言</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon cui-wrench"></i> 管理員帳號管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_manager.html" id="manager">管理員管理</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+        </div>
+        <main class="main">
+            <!-- Breadcrumb-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="./bg_index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">商品管理</a>
+                </li>
+                <li class="breadcrumb-item active">查詢商品</li>
+            </ol>
+            <div class="container-fluid">
+                <!-- 中間內容 -->
+                <div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> 商品資料</div>
+            <div class="card-body">
+                <div class="form-group row justify-content-end">
+                    <div class="col-lg-4 col-sm-6 ">
+                        <div class="input-group">
+                            <input class="form-control" id="input1-group2" type="text" name="input1-group2"
+                                placeholder="請輸入商品編號">
+                            <span class="input-group-prepend">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search"></i> Search</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-responsive-sm table-striped">
+                    <thead>
+                        <tr>
+                            <th>商品編號</th>
+                            <th>商品類別</th>
+                            <th>商品名稱</th>
+                            <th>商品價格</th>
+                            <th>商品狀態</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>素材</td>
+                            <td>大象郵戳</td>
+                            <td>80</td>
+                            <td>
+                                <span class="badge badge-danger">已下架</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>工具</td>
+                            <td>筆刷</td>
+                            <td>10</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>信紙</td>
+                            <td>信紙</td>
+                            <td>3</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>素材</td>
+                            <td>獅子圖案</td>
+                            <td>50</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>工具</td>
+                            <td>鉛筆</td>
+                            <td>55</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagination justify-content-center mt-5">
+                    <li class="page-item">
+                        <a class="page-link" href="#">Prev</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- end -->
+            </div>
+        </main>
+
+    </div>
+    <footer class="app-footer">
+        <div>
+          <a href="#">Air-Plan</a>
+          <span>&copy; 2020 creativeLabs.</span>
+        </div>
+        <div class="ml-auto">
+          <span>Powered by</span>
+          <a href="#">Air-Plan</a>
+        </div>
+      </footer>
+    <!-- CoreUI and necessary plugins-->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/pace.min.js"></script>
+    <script src="./js/perfect-scrollbar.min.js"></script>
+    <script src="./js/coreui.min.js"></script>
+</body>
+
+</html>

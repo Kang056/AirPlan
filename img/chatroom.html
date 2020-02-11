@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Air Plan | Chatroom</title>
+    <link rel="Shortcut Icon" type="img/x-icon" href="./img/share/logo_2.png" >
+    <link href="./css/main.css" rel="stylesheet" type="text/css">
+    <script src="./js/chatroom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body class="chat-body">
+    <div class="nav-body">
+    <div id="navHead" class="nav-navBgWrap">
+        <div class="nav-navBg">
+            <img src="./img/share/nav_lightBox.svg" alt="">
+            <nav id="intColor" class="nav-navWrap">
+                <!-- <div class="nav-topBlock">
+              登入和設定 
+          </div> -->
+                <div class="nav-logoWrap">
+                    <a href="./home.html"><img src="./img/share/LOGO.png"></a>
+                </div>
+                <div class="nav-navPageWrap hbg">
+                    <ul class="nav-list" id="list">
+                        <a class="nav-logo" href="./home.html"><img src="./img/share/LOGO.png"></a>
+                        <li><a href="./write-letter.html">
+                                <p class="nav-pageName">寫信</p> <span class="nav-circle-1 "></span>
+                            </a> </li>
+                        <li><a href="./catch-letter.html">
+                                <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
+                            </a> </li>
+                        <li><a href="./shop.html">
+                                <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
+                            </a> </li>
+                        <li><a href="./cave.html">
+                                <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
+                            </a> </li>
+                        <li><a href="./chatroom.html">
+                                <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
+                            </a> </li>
+                        <li><a href="./user-setting.html">
+                                <p class="nav-pageName">用戶設定</p> <span class="nav-circle-6"></span>
+                            </a> </li>
+                        <div class="hbg-botWrap">
+                            <!--漢堡登入者資訊-->
+                            <div class="hbg-littleNav">
+                                <a class="showSigin" href="#"><i id="signInStatusIconH"
+                                        class="fas fa-user-circle"></i></a>
+                                <span id="signInStatusH" class="showSigin">登入</span>
+                            </div>
+                            <div class="hbg-pc">
+                                <div class="cav-member">
+                                    <div id="cavMemberH"></div>
+                                </div>
+                                <div class="cav-paper">
+                                    <div id="cavPaperH"></div>
+                                </div>
+                                <div class="cav-coin">
+                                    <div id="cavCoinH"></div>
+                                </div>
+                                <!-- <div class="cav-member">會員:666</div> -->
+                                <!-- <div class="cav-paper">信紙:999</div> -->
+                                <!-- <div class="cav-coin">Air幣:777</div> -->
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="nav-road">
+                        <div></div>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-littleNav">
+                <a id="showSigin" class="showSigin" href="#"><i id="signInStatusIconN"
+                        class="fas fa-user-circle"></i></a>
+                <span id="signInStatusN" class="showSigin">登入</span>
+            </div>
+            <div class="nav-pc">
+                <!--nav登入者資訊-->
+                <div class="cav-member">
+                    <div id="cavMemberN"></div>
+                </div>
+                <div class="cav-paper">
+                    <div id="cavPaperN"></div>
+                </div>
+                <div class="cav-coin">
+                    <div id="cavCoinN"></div>
+                </div>
+                <!-- <div class="cav-member">會員:666</div> -->
+                <!-- <div class="cav-paper">信紙:999</div> -->
+                <!-- <div class="cav-coin">Air幣:777</div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-hamPosition">
+        <div class="nav-hamburgerWrap">
+            <div class="hambuger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 登入 -->
+    <div class="signInBg" id="signInBg">
+        <div class="signInData">
+            <h4>Sign In</h4>
+            <p id="closeSigin" class="closeSignin">X</p>
+            <form class="formsignInData">
+                <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="signInEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
+
+                <label for="signInPassword">
+                    <P>Password:</P>
+                </label>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="密碼需為8-12長度的英文大小寫或數字"
+                    name="memPsw" required>
+
+                <p class="showForget" id="showForget">忘記密碼</p>
+                <p class="showRegister" id="showRegister">註冊</p>
+
+                <!-- <br> -->
+                <button id="signInBtn" class="signInBtn" type="button" value="登入">
+                    <p>Sign in</p>
+                </button>
+
+                <button id="signInCancelBtn" class="signInCancelBtn" type="button" value="取消">
+                    <p>Cancel</p>
+                </button>
+            </form>
+        </div>
+        <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
+  <img class="envelopedown" src="./img/user-setting/envelopedown.png" alt=""> -->
+    </div>
+    <!-- 註冊 -->
+    <div class="registerBg" id="registerBg">
+        <div class="registerData">
+            <h4>Register</h4>
+            <p class="closeRegister" id="closeRegister">X</p>
+            <form class="formRegisterData">
+                <img class="registerLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="registerEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
+
+                <label for="registerPassword">
+                    <P>Password:</P>
+                </label>
+                <input class="registerPassword" type="password" id="registerPassword" placeholder="密碼需為8-12長度的英文大小寫或數字"
+                    name="memPsw" maxlength="12" required>
+
+                <label for="registerPasswordCheck">
+                    <P>Password again:</P>
+                </label>
+                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
+                    placeholder="密碼需為8-12長度的英文大小寫或數字" name="memPswAgain" maxlength="12" required>
+
+                <br>
+                <button id="registerBtn" class="registerBtn" type="button" value="註冊">
+                    <p>Register</p>
+                </button>
+                <button id="registerCancelBtn" class="registerCancelBtn" type="button" value="取消">
+                    <p>Cancel</p>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- 忘記密碼 -->
+    <div class="forgetBg" id="forgetBg">
+        <div class="forgetBgData">
+            <h4>Get new password</h4>
+            <p class="closeForget" id="closeForget">X</p>
+            <form class="formForgetData">
+                <img class="forgetLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="forgetEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
+
+                <br>
+                <button id="forgetBtn" class="forgetBtn" type="button" value="忘記密碼">
+                    <p>Get</p>
+                </button>
+                <button id="forgetCancelBtn" class="forgetCancelBtn" type="button" value="忘記密碼">
+                    <p>Cancel</p>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- 控制navbar上下移 -->
+<script>
+    let a;
+    $(function () {
+        $(window).scroll(function (e) {
+            let scrollValue = $(this).scrollTop()
+            if (scrollValue > 200) {
+                $("div.nav-navBgWrap").addClass("-on");
+                if ($(this).scrollTop() - a < 0) {
+                    $("div.nav-navBgWrap").removeClass("-on");
+                }
+                a = $(this).scrollTop()
+            } else {
+                $("div.nav-navBgWrap").removeClass("-on");
+            }
+        });
+    });
+</script>
+<script>
+    const hambuger = document.querySelector('.hambuger');
+
+    hambuger.addEventListener('click', () => {
+        hambuger.classList.toggle('change');
+    })
+</script>
+<!--     hamburger icon 的切換  -->
+<script>
+    $("div.hambuger").on("click", function () {
+        $('#list').toggleClass('open');
+        $("body").toggleClass('open');
+    });
+</script>
+<!-- 顯示所在頁面提示 -->
+<script>
+    $(function () {
+        var nav = $(".nav-navWrap .nav-list a");
+        // console.log(nav);
+        var url = window.location.href;
+        // console.log(url);
+        // console.log(url.split("/")[url.split("/").length - 1]);
+        var page = "./" + url.split("/")[url.split("/").length - 1];
+        // console.log(page);
+        var host = window.location.host;
+        // console.log(host);
+        for (var i = 0; i < nav.length; i++) {
+            var astr = nav.eq(i).attr("href");
+            while (page == astr) {
+                nav.eq(i).find(".nav-pageName").addClass('nav-now').siblings().removeClass('nav-now');
+                // console.log(i);
+                break;
+            }
+        }
+
+    })
+
+</script>
+
+<!-- 登入系統 及 註冊系統 -->
+<script>
+    function logout() {//////////////////登出
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            document.getElementById("cavMemberN").innerText = "";
+            document.getElementById("cavMemberH").innerText = "";
+            document.getElementById("cavPaperN").innerText = "";
+            document.getElementById("cavPaperH").innerText = "";
+            document.getElementById("cavCoinN").innerText = "";
+            document.getElementById("cavCoinH").innerText = "";
+            document.getElementById("signInStatusIconN").style.color = '#aaa';
+            document.getElementById("signInStatusIconH").style.color = '#aaa';
+            document.getElementById("signInStatusN").innerHTML = "登入";
+            document.getElementById("signInStatusH").innerHTML = "登入";
+            document.getElementById("intColor").style.backgroundColor = "";
+            location.reload();//登出後刷新頁面清除資料
+        }
+        xhr.open("get", "./phps/nav_logout.php", true);
+        xhr.send(null)
+    }
+
+    function cancelSignIn() {//////////////////清除登入表單內容
+        document.getElementById("signInEmail").value = "";
+        document.getElementById("signInPassword").value = "";
+        document.getElementById("signInBg").style.display = "none";
+    }
+
+    function showMemInfo(jsonStr) {//////////////////顯示登入者資訊
+        let member = JSON.parse(jsonStr);
+        if (member.memNo) {
+            document.getElementById("cavMemberN").innerText = '會員:' + member.memName + '-' + member.memNo;
+            document.getElementById("cavMemberH").innerText = '會員:' + member.memName + '-' + member.memNo;
+            document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+            document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+            document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+            document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+            document.getElementById("signInStatusIconN").style.color = 'green';
+            document.getElementById("signInStatusIconH").style.color = 'green';
+            document.getElementById("signInStatusN").innerHTML = "登出";
+            document.getElementById("signInStatusH").innerHTML = "登出";
+            if (member.intColor == 0) {
+                document.getElementById("intColor").style.backgroundColor = "rgba(255, 255, 255, .2)";
+            } else {
+                document.getElementById("intColor").style.backgroundColor = "rgba(0,0,0,.2)";
+            }
+            cancelSignIn();
+            location.reload();//登入資訊抓取方式2:從整頁面
+        } else {
+            alert("帳密錯誤");
+        }
+    }
+
+    function sendSignInForm() {//////////////////登入表單發送
+        const signInmemEmail = document.getElementById("signInEmail").value;
+        const signInmemPsw = document.getElementById("signInPassword").value;
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            showMemInfo(xhr.responseText);
+        }
+        xhr.open("post", "./phps/nav_login.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        if (signInmemEmail != '' && signInmemPsw != '') {
+            let data_info = `memEmail=${signInmemEmail}&memPsw=${signInmemPsw}`;
+            xhr.send(data_info);
+        } else {
+            alert('欄位不可空白');
+        }
+    }
+
+    function getSignInInfo() {//////////////////取得登入資訊 依登入狀況呈現登入資訊
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            let member = JSON.parse(xhr.responseText);
+            //   console.log("第一手session資料_memNo:",member.memNo);
+            //   console.log("第一手session資料_memName:",member.memName);
+            //   console.log("第一手session資料_memEmail:",member.memEmail);
+            //   console.log("第一手session資料_letCount:",member.letCount);
+            //   console.log("第一手session資料_airCoin:",member.airCoin);
+            //   console.log("第一手session資料_intColor:",member.intColor);
+            //   console.log("第一手session資料_matPosUrl:",member.matPosUrl);
+            //   console.log("第一手session資料_memPsw:",member.memPsw);
+            //   console.log("第一手session資料_matPosNo:",member.matPosNo);
+            //   console.log("第一手session資料_matPatNo:",member.matPatNo);
+            if (member.memNo) {
+                document.getElementById("cavMemberN").innerText = '會員:' + member.memName + '-' + member.memNo;
+                document.getElementById("cavMemberH").innerText = '會員:' + member.memName + '-' + member.memNo;
+                document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+                document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+                document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+                document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+                document.getElementById("signInStatusIconN").style.color = 'green';
+                document.getElementById("signInStatusIconH").style.color = 'green';
+                document.getElementById("signInStatusN").innerHTML = "登出";
+                document.getElementById("signInStatusH").innerHTML = "登出";
+                if (member.intColor == 0) {
+                    document.getElementById("intColor").style.backgroundColor = "rgba(255, 255, 255, .2)";
+                } else {
+                    document.getElementById("intColor").style.backgroundColor = "rgba(0,0,0,.2)";
+                }
+                // console.log('登入狀態:已登入');
+            } else {
+                // console.log('登入狀態:尚未登入');
+            }
+        }
+        xhr.open("get", "./phps/nav_getSignInInfo.php", true);
+        xhr.send(null);
+    }
+
+
+    function memName() {//////////////////memName產生器
+        var arr = ['丹迪', '雲彩', '粉彩', '西卡', '牛皮', '瓦楞'];
+        var index = Math.floor((Math.random() * arr.length));
+        return arr[index];
+    }
+
+    function cancelRegisterForm() {//////////////////清除註冊表單內容
+        document.getElementById("registerEmail").value = "";
+        document.getElementById("registerPassword").value = "";
+        document.getElementById("registerPasswordCheck").value = "";
+        document.getElementById("registerBg").style.display = "none";
+        document.getElementById("signInBg").style.display = "block";
+    }
+
+    function sendRegisterForm() {//////////////////註冊表單發送
+        const registermemEmail = document.getElementById("registerEmail").value;
+        const registermemPsw = document.getElementById("registerPassword").value;
+        const registermemPswCheck = document.getElementById("registerPasswordCheck").value;
+        const registermemName = memName();
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            memberR = JSON.parse(xhr.responseText);
+            if (memberR.memEmail) {
+                cancelRegisterForm();
+                document.getElementById("signInBg").style.display = "none";
+                let xhr = new XMLHttpRequest();
+                let memEmail = memberR.memEmail;
+                let memPsw = memberR.memPsw;
+                let data_info = `memEmail=${memEmail}&memPsw=${memPsw}`;
+                xhr.onload = function () {
+                    showMemInfo(xhr.responseText);
+                }
+                xhr.open("post", "./phps/nav_login.php", true);
+                xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                xhr.send(data_info);
+                alert(memberR.memEmail + ' ' + '您好！ 您已註冊成功');
+            }
+            else {
+                alert('此Email已註冊過');
+            }
+        }
+        xhr.open("post", "./phps/nav_register.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        if (registermemEmail != '' && registermemPsw != '' && registermemPswCheck != '') {
+            if (registermemPsw.length >= 8) {
+                if (!registermemPsw.match(/[^a-zA-Z0-9]+/)) {
+                    if (registermemPsw == registermemPswCheck) {
+                        let data_info = `memName=${registermemName}&memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
+                        xhr.send(data_info);
+                    } else {
+                        alert('密碼確認與第一次輸入不同');
+                    }
+                } else {
+                    alert('密碼須為英文大小寫或數字');
+                }
+            } else {
+                alert('密碼長度需為8-12');
+            }
+        } else {
+            alert('欄位不可空白');
+        }
+    }
+
+    function newPsw(length) {//////////////////密碼產生器
+        let newPsw = '';
+        let alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let alphabetLength = alphabet.length;
+        for (let i = 0; i < length; i++) {
+            newPsw += alphabet.charAt(Math.floor(Math.random() * alphabetLength));
+        }
+        return newPsw;
+    }
+
+    function cancelForgetForm() {//////////////////清除忘記密碼表單內容
+        document.getElementById("forgetEmail").value = "";
+        document.getElementById("forgetBg").style.display = "none";
+        document.getElementById("signInBg").style.display = "block";
+    }
+
+    function sendForgetForm() {//////////////////忘記密碼表單發送
+        const forgetmemEmail = document.getElementById("forgetEmail").value;
+        const memNewPsw = newPsw(8);//呼叫新密碼產生器
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.responseText == 'Success!') {
+                document.getElementById("forgetEmail").value = "";
+                document.getElementById("forgetBg").style.display = "none";
+                alert('新密碼已寄送至您的信箱中');
+            }
+            else {
+                alert('查無此Email');
+            }
+        }
+        xhr.open("post", "phps/airPlanMailer/nav_forget.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        if (forgetmemEmail != '') {
+            let data_infoF = `memEmail=${forgetmemEmail}&newPsw=${memNewPsw}`;
+            xhr.send(data_infoF);
+        }
+        else {
+            alert('欄位不可空白');
+        }
+    }
+
+    window.addEventListener("load", function () {//////////////////表單按鈕事件聆聽
+        getSignInInfo();//檢查登入狀態
+        document.getElementById("signInBtn").onclick = sendSignInForm;//點擊登入按鈕呼叫發送表單function
+        document.getElementById("signInCancelBtn").onclick = cancelSignIn;//點擊取消按鈕呼叫清除表單function
+        document.getElementById("registerBtn").onclick = sendRegisterForm;//點擊註冊按鈕呼叫發送表單function
+        document.getElementById("registerCancelBtn").onclick = cancelRegisterForm;//點擊註冊取消按鈕呼叫清除表單function
+        document.getElementById("forgetBtn").onclick = sendForgetForm;//點擊忘記密碼按鈕呼叫發送表單function
+        document.getElementById("forgetCancelBtn").onclick = cancelForgetForm;//點擊忘記密碼取消按鈕呼叫清除表單function
+    });
+</script>
+
+<!-- 會員登入/註冊/忘記密碼燈箱 -->
+<script>
+    const signInBg = document.getElementById("signInBg");//登入燈箱
+    const showSigin = document.querySelectorAll(".showSigin");
+    const closeSigin = document.getElementById("closeSigin");
+    const signInStatusL = document.getElementById("signInStatusN");//登入資訊
+    showSigin.forEach(item => {//開啟登入燈箱
+        item.addEventListener('click', () => {
+            if (signInStatusL.innerHTML == "登入") {
+                signInBg.style.display = "block";
+            }
+            else {//登出
+                logout();
+            }
+        })
+    })
+    closeSigin.onclick = function () {//////////////////x關閉登入燈箱
+        cancelSignIn();
+    };
+    const registerBg = document.getElementById("registerBg");//註冊燈箱
+    const showRegister = document.getElementById("showRegister");
+    const closeRegister = document.getElementById("closeRegister");
+    showRegister.onclick = function () {//////////////////開啟註冊燈箱
+        registerBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeRegister.onclick = function () {//////////////////關閉註冊燈箱
+        cancelRegisterForm();
+        signInBg.style.display = "none";
+    };
+
+    const forgetBg = document.getElementById("forgetBg");//忘記密碼燈箱
+    const showForget = document.getElementById("showForget");
+    const closeForget = document.getElementById("closeForget");
+    showForget.onclick = function () {//////////////////開啟忘記密碼燈箱
+        forgetBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeForget.onclick = function () {//////////////////關閉忘記密碼燈箱
+        cancelForgetForm();
+        signInBg.style.display = "none";
+    };
+</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src="./js/kloud.min.js"></script>
+
+<header>
+    <div id="headerClouds" style="width: 100%; height: 18vw;">
+        <canvas id="myClouds" style="width: 100%; height: 40%;"></canvas>
+    </div>
+    <!-- 漂浮的雲 -->
+    <div class="white-space-bg">
+        <div class="head-box">
+            <div class="dot-box-blue bottom-bg">
+                <span class="share-clip clip-left"></span>
+                <span class="share-clip clip-right"></span>
+                <div class="box-white top-left-bg">
+                    <div class="box-white top-left-bg" id='headerVue' style="position: relative;">
+                        <!-- 這裡會自動判斷頁面產生 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="clouds" id="clouds">
+            <div class="cloud_1"></div>
+            <template  v-for="(cloud, index) in 15">
+                <div :class=`cloud_${index}` :style="{left: `${Math.random() * innerWidth}px`}"></div>
+            </template>
+            
+        </div>
+    </div>
+
+
+    
+    <script>
+        $('#myClouds').Klouds({
+            speed: 1,
+            layerCount: 4,
+            cloudColor1: '#82afd9',
+            cloudColor2: '#F7FAFD',
+            // bgColor1: '#82afd9',
+            bgColor: '#ffffff',
+        })
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script>
+        /*
+         * header Contant Change
+         */
+        const writeLetter = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div class="headerText-1">寫</div>
+                <br>
+                <img src="./img/share/Paint-bucket.svg" class="paint-bucket">
+                <img src="./img/share/shiny.svg" class="shiny-big">
+                <img src="./img/share/shiny.svg" class="shiny-small">
+                <img src="./img/share/yellow-paint-line.svg" class="yellow-paint-line">
+                <div class="headerText-2">
+                    <img src="./img/share/line-paperPlane.svg" class="line-paperPlane">
+                    &nbsp一封信
+                </div>
+            </h1>
+            `
+        }
+        const catchLetter = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div class="catch-headerText">
+                <span style="font-size:inherit; ">查看</span>
+                <span style="font-size:inherit; ">&nbsp撈信</span>
+                </div>
+                <br>
+                <img src="./img/share/butterfly-net.svg" class="catch-net">
+                <img src="./img/share/shiny.svg" class="catch-shinyBig">
+                <img src="./img/share/shiny.svg" class="catch-shinySmall">
+                <img src="./img/share/yellow-paint-line.svg" class="catch-yellowPaintLine">
+                <img src="./img/share/line-paperPlane.svg" class="catch-linePaperPlane">
+            </h1>
+            `
+        }
+        const chatroom = {
+            template: `
+            <h1 class="headpg-name threed-text-blue chatroom-header">
+                <div 
+                    style="width:45%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span style="font-size:inherit;">聊天室</span>
+                </div>
+                <br>
+                <img src="./img/share/phone.png" class="phone">
+                <img src="./img/share/shiny.svg" class="shiny1">
+                <img src="./img/share/shiny.svg" class="shiny2">
+                <img src="./img/share/yellow-paint-line.svg" class="paint">
+                <img src="./img/share/chat_talk.png" class="chat_talk">
+            </h1>
+            `
+        }
+        const cave = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div class="cave-headerText">
+                <span style="font-size:inherit;">我的倉庫</span>
+                </div>
+                <br>
+                <img src="./img/cave/cavheaderImg.png" class="cave-cavheaderImg">
+                <img src="./img/share/cave-pattern.svg" class="cave-pattern">
+            </h1>
+            `
+        }
+        const shop = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div 
+                    style="width:80%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span class="shop-headerText">客製化商城</span>
+                </div>
+                <br>
+                <img src="./img/share/shop-pattern2.svg" class="shop-pattern2">
+                <img src="./img/share/shop-pattern.svg" class="shop-pattern">
+                
+                <img src="./img/share/yellow-paint-line.svg" class="shop-yellowPaintLine">
+            </h1>
+            `
+        }
+        const userSetting = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    用戶設定
+                <img src="./img/user-setting/wrench.svg" class="userSet-wrench">
+                </div>
+                <br>
+                <img src="./img/user-setting/gear.svg" alt="gear" class="userSet-gear">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <img src="./img/user-setting/hammer.svg" class="userSet-hammer">
+                </div>
+            </h1>
+            `
+        }
+        
+        new Vue({
+            el: '#headerVue',
+            template: `
+                <div class="box-white top-left-bg">
+                    <component :is='pageTitle'/>
+                </div>
+            `,
+            components: {
+                writeLetter,
+                catchLetter,
+                chatroom,
+                cave,
+                shop,
+                userSetting,
+            },
+            data: {
+                pageTitle: null
+            },
+            mounted(){
+                // console.log(location.href.split('/').reverse()[0].split('.')[0]);
+                this.pageTitle = location.href.split('/').reverse()[0].split('.')[0];
+                
+            }
+        })
+        
+        /*
+         * header Clouds
+         */
+        let vm = new Vue({
+            el:'#clouds',
+        });
+    </script>
+</header>
+    <main class="chatroom-main">
+        <section class="mainSection">
+            <div class="sectionOver"></div>
+            <input type="hidden" name="memNo2" id="memNo2">
+        </section>
+        <div class="mainBook">
+            <div class="bookDashed">
+                <div class="dashPage1">
+                    <div class="dashPage2">
+                        <div class="dashPage3">
+                            <div class="dashPage4">
+                                <div class="dashPage5">
+                                    <img class="pageImg" src="./img/chatroom/book.png" alt="book.png">
+                                    <div class="pageContent"></div>
+                                    <div class="contentSend">
+                                        <form method="POST">
+                                            <input class="sendText" name="sendText" type="text">
+                                            <input type="hidden" name="catch" id="catch">
+                                            <button class="sendBtn"><img src="./img/chatroom/send.png" alt=""></button>
+                                        </form>
+                                        <div class="sendClearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainClearfix"></div>
+    </main>
+    <footer class="footer-bottom"><p> Copyright © Air Plan All rights reserved.</p></footer>
+
+
+    <script>
+        userMemNo = 0;
+        let mem2 = document.getElementById("memNo2").value;
+
+        window.addEventListener("load", function () {
+            getLogin();
+            if (userMemNo != 0) {
+                document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText,
+                    false); //=====當點擊mark時執行傳送聊天內容
+                let Mark = document.querySelectorAll('.sectionMark1');
+                // console.log(Mark[0].classList);
+                if (Mark.length > 0) { //=====聊天列表為0
+                    $('.contentSend').show(); //=====讓輸入框顯示
+                    Mark[0].classList.add("MarkRed"); //=====第一個mark顯示為紅色
+                    let mem2Name = Mark[0].getElementsByTagName("p")[0].innerText;
+                    let mem2 = mem2Name.split("-");
+                    get_chat(mem2[1]); //=====第一個要秀第一個的聊天內容
+                    for (let i = 0; i < Mark.length; i++) {
+                        Mark[i].addEventListener('click', function (e) {
+                            document.getElementsByClassName('sendText')[0].value = ""; //=====清空輸入框內容
+                            let mem2Name = e.currentTarget.getElementsByTagName("p")[0].innerText;
+                            let mem2 = mem2Name.split("-");
+                            get_chat(mem2[1]); //=====執行撈取資料，傳送memNo2
+                            for (let j = 0; j < Mark.length; j++) {
+                                Mark[j].classList.remove("MarkRed"); //=====移除所有mark的顏色
+                            }
+                            e.currentTarget.classList.add("MarkRed"); //=====點到的mark新增紅色的class
+                            // console.log(memNo2.value)
+                        })
+                    };
+                    let timerId = setInterval(function () {
+                        get_Data(userMemNo);
+                        get_chat(mem2[1]);
+                        for (let j = 0; j < Mark.length; j++) {
+                            Mark[j].classList.remove("MarkRed"); //=====移除所有mark的顏色
+                        }
+                        Mark[0].classList.add("MarkRed"); //=====第一個mark顯示為紅色
+                        document.getElementsByClassName('sendText')[0].value = "";
+                    }, 20000);
+                } else {
+                    //=====聊天列表為空時
+                    $('.sectionOver').append(
+                        `<div class='sectionMark1 MarkRed'><div class='overImg'><img src='./img/share/LOGO.png'></div></div>`
+                    );
+                    $('.pageContent').append(
+                        `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>快加入好友，一起來聊天吧！</p></div>`
+                    );
+                    $('.contentSend').hide(); //=====隱藏輸入框
+                }
+            } else {
+
+            }
+        }, true);
+
+        function getLogin() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                member = JSON.parse(xhr.responseText);
+                // console.log(member.memNo)
+                if (member.memNo) { //=====為登入狀態
+                    userMemNo = member.memNo;
+                    get_Data(userMemNo); //=====執行撈聊天列表
+                } else {
+                    $('.sectionOver').append(
+                        `<div class='sectionMark1 MarkRed'><div class='overImg'><img style="margin-top:23%;" src='./img/share/LOGO.png'></div></div>`
+                    );
+                    $('.pageContent').append(
+                        `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>請先登入</p></div>`
+                    );
+                }
+
+            }
+            xhr.open('post', './phps/nav_getSignInInfo.php', false);
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send(null);
+        }
+
+                // 抓聊天列表的資料
+                function showData(str, memNo1) {
+            let data = JSON.parse(str);
+            let overChil = document.getElementsByClassName('sectionOver')[0].childNodes.length;
+            let markLen = document.querySelectorAll('.sectionMark1').length;
+            if (data != "") {
+                if (overChil > 0) {
+                    for ($i = overChil; $i > markLen; i++) {
+                        document.getElementsByClassName('sectionOver')[0].removeChild(i);
+                    }
+                } else {
+                    //印資料
+                    for (var i in data) {
+                        if (data[1] == undefined) {
+                            //如果只有一筆資料
+                            if (data[i].user1 != member.memNo) {
+                                $('.sectionOver').append(
+                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
+                                );
+                            } else {
+                                $('.sectionOver').append(
+                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
+                                );
+                            }
+                        } else {
+                            for (var j = 0; j < data.length; j++) {
+                                console.log(data.length)
+                                if (j == i) {
+                                    //不要印
+                                    if (data.length == 2) {
+                                        if (i == 0) {
+                                            //不要印
+                                        } else {
+                                            if (data[i].user1 != member.memNo) {
+                                                $('.sectionOver').append(
+                                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
+                                                );
+                                            } else {
+                                                $('.sectionOver').append(
+                                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
+                                                );
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (data[i].user1 != data[j].user2 && data[i].user2 != data[j].user1) {
+                                        if (data[i].user1 != member.memNo) {
+                                            $('.sectionOver').append(
+                                                `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
+                                            );
+                                        } else {
+                                            $('.sectionOver').append(
+                                                `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 抓聊天內容
+        function showChat(str, memNo1) {
+            let data = JSON.parse(str);
+            document.getElementsByClassName('pageContent')[0].innerHTML = ""; //=====清空聊天室內容
+            let mem2Img = document.getElementsByClassName('MarkRed')[0].getElementsByTagName("img")[0].src;
+            for (var i in data[0]) {
+                if (data[0][i].chatContent != null) {
+                    if (data[0][i].memNo1 == member.memNo) {
+                        $(`.pageContent`).append(
+                            `<div class='contentMe'><p>${data[0][i].chatContent}</p></div>`);
+                    } else {
+
+                        $('.pageContent').append(
+                            `<div class='contentYour'><div class='overImg'><img src='${data[1][0].matPosUrl}'></div><p>${data[0][i].chatContent}</p></div>`
+                        );
+                    }
+                } else {
+                    $('.pageContent').append(
+                        `<div class='contentYour'><div class='overImg'><img src='${data[1][0].matPosUrl}'></div><p>哈囉~</p></div>`
+                    );
+                }
+            }
+        }
+
+        function get_Data(memNo1) {
+            let xhr = new XMLHttpRequest();
+            document.getElementById("catch").value = 'mark';
+            let mark = document.getElementById("catch").value;
+            let data_info = "catch=" + mark + "&memNo1=" + memNo1;
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    data = xhr.responseText;
+                    showData(data, memNo1);
+                } else {
+                    alert(xhr.status, xhr.statusText);
+                }
+            }
+            xhr.open('post', './phps/chatroom.php', false);
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send(data_info);
+        }
+
+        function get_chat(memNo2) {
+            let xhr = new XMLHttpRequest();
+            document.getElementById("catch").value = 'chat';
+            let chat = document.getElementById("catch").value;
+            let data_info = "catch=" + chat + "&memNo2=" + memNo2;
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    // document.getElementsByClassName('pageContent')[0].innerHTML = ""; //=====清空聊天室內容
+                    showChat(xhr.responseText, userMemNo);
+                } else {
+                    alert(xhr.status, xhr.statusText);
+                }
+            }
+
+            xhr.open('post', './phps/chatroom.php', false);
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send(data_info);
+        }
+
+        function reget(memNo2) {
+            let xhr = new XMLHttpRequest();
+            document.getElementById("catch").value = 'mark';
+            let mark = document.getElementById("catch").value;
+            let data_info = "catch=" + mark + "&memNo2=" + memNo2;
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    data = xhr.responseText;
+                    showChat(data);
+                } else {
+                    alert(xhr.status, xhr.statusText);
+                }
+            }
+            xhr.open('post', './phps/chatroom.php', false);
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send(data_info);
+
+        }
+
+        //輸入聊天內容
+        function showText(str) {
+            let data = JSON.parse(str);
+            document.getElementsByClassName('sendText')[0].value = "";
+            $(`.pageContent`).append(
+                `<div class='contentMe'><p>${data.chatContent}</p></div>`);
+        }
+
+        function sendText(e) {
+            let val = document.getElementsByClassName('sendText')[0].value;
+            e.preventDefault();
+            if (val != "") {
+                let xhr = new XMLHttpRequest();
+                document.getElementById("catch").value = 'content';
+                let content = document.getElementById("catch").value;
+                let mem2Name = document.getElementsByClassName('MarkRed')[0].getElementsByTagName("p")[0].innerText;
+                let mem2 = mem2Name.split("-");
+                // console.log(222)
+                // console.log(mem2[1])
+                let data_info = "catch=" + content + "&memNo2=" + mem2[1] + "&sendText=" + val;
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        data = xhr.responseText;
+                        showText(data);
+                    } else {
+                        alert(xhr.status, xhr.statusText);
+                    }
+                }
+                xhr.open('post', './phps/chatroom.php', false);
+                xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+                xhr.send(data_info);
+            } else {
+                alert("請輸入文字");
+            }
+        }
+    </script>
+</body>
+
+</html>

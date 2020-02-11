@@ -1,0 +1,69 @@
+function showMember() {
+    let xhr = new XMLHttpRequest();
+    document.getElementById("con_member").value = "member";
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            memberData(xhr.responseText);
+            // console.log(xhr.responseText);
+        } else {
+            alert(xhr.status);
+        };
+        // alert(xhr.responseText);
+    };
+
+    xhr.open("post", "./phps/background.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    let data_info = "type=" + document.getElementById("con_member").value;
+    xhr.send(data_info);
+}
+
+function memberData(str) {
+    let data = JSON.parse(str);
+    // document.getElementById("memNo").innerHTML=data[0].memNo;
+
+    // console.log(data);
+    // var arr = new Array();
+    for (j = 0; j < data.length; j++) {
+        var tr = document.createElement('tr');
+        for (i = 0; i < 6; i++) {
+            var td = document.createElement('td');
+            arr = [data[j].memNo, data[j].memName, data[j].memEmail, data[j].letCount, data[j].airCoin, data[j].intColor];
+            // console.log(td);
+
+            if(arr[5]==0){
+                arr[5]="亮色";
+            }else{
+                arr[5]="暗色";
+            }
+
+            td.innerHTML = arr[i];
+            tr.appendChild(td);
+            // console.log(tr.childNodes[i]);
+            // console.log(tr.childNodes[i].innerHTML)
+        };
+        let memberInfo = document.getElementById("memberInfo");
+        memberInfo.appendChild(tr);
+    }
+    // console.log(arr);
+    // console.log(memberInfo);
+}
+
+
+// window.addEventListener('load', showMember);
+
+function getSignInfo() {//依登入者權限開放添加管理者功能
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        let admin = JSON.parse(xhr.responseText);
+        document.getElementById('bg_logout').innerText = '登出';
+        document.getElementById('adminUser').innerText = admin.admName;
+    }
+    xhr.open("get", "./phps/bg_getSignInfo.php", true);
+    xhr.send(null);
+}
+
+window.addEventListener("load", function () {
+    getSignInfo();
+    showMember();
+});

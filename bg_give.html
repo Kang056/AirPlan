@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Air-Plan | 會員管理 - 查詢打賞紀錄</title>
+    <link rel="Shortcut Icon" type="img/x-icon" href="./img/share/logo_2.png" >
+    <!-- Icons-->
+    <!-- <link href="../node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"> -->
+
+    <!-- Main styles for this application-->
+    <link href="css/bg_main.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <!-- top_header -->
+    <header class="app-header navbar">
+  <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="./bg_index.html">
+    <img class="navbar-brand-full" src="./img/share/LOGO.png" height="45" alt="Logo">
+  </a>
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#">
+        登出
+        <!-- <i class="icon-bell"></i>
+          <span class="badge badge-pill badge-danger">5</span> -->
+      </a>
+    </li>
+    <li class="nav-item dropdown mr-4">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <img class="img-avatar" src="./img/background/bob.jpg" alt="admin@bootstrapmaster.com">
+      </a>
+      <!-- <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-header text-center">
+          <strong>Settings</strong>
+        </div>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-wrench"></i> Settings</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-shield"></i> Lock Account</a>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-lock"></i> Logout</a>
+      </div> -->
+    </li>
+  </ul>
+</header>
+    <div class="app-body">
+        <div class="sidebar">
+            <!-- sidebar menu-->
+            <nav class="sidebar-nav">
+  <ul class="nav">
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon icon-people"></i> 會員管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_member.html" id="member">查詢會員資料</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_buy.html" id="buy">查詢消費紀錄</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_write.html" id="write">查詢寫信紀錄</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_give.html" id="give">查詢打賞紀錄</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon cui-cart"></i> 商品管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_productSearch.html" id="prodSearch">查詢商品</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_productModify.html" id="prodModify">修改商品</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon icon-ban"></i> 不當內容檢舉管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_banArticle.html" id="banArticle">被檢舉信件文章</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_banComment.html" id="banComment">被檢舉信件留言</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item nav-dropdown">
+      <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon cui-wrench"></i> 管理員帳號管理</a>
+      <ul class="nav-dropdown-items">
+        <li class="nav-item">
+          <a class="nav-link" href="./bg_manager.html" id="manager">管理員管理</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+        </div>
+        <main class="main">
+            <!-- Breadcrumb-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="./bg_index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">會員管理</a>
+                </li>
+                <li class="breadcrumb-item active">查詢打賞紀錄</li>
+            </ol>
+            <div class="container-fluid">
+                <!-- 中間內容 -->
+                <div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> 文章打賞紀錄</div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>被打賞會員名稱</th>
+                            <th>被打賞文章標題</th>
+                            <th>此文章累積打賞金額</th>
+                            <th>文章發佈日期</th>
+                            <th>此文章內容狀態</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>波音123</td>
+                            <td>我來了了了</td>
+                            <td>1548</td>
+                            <td>2019/04/26</td>
+                            <td>
+                                <span class="badge badge-danger">已下架</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>空中巴士888</td>
+                            <td>發大財</td>
+                            <td>666</td>
+                            <td>2019/06/04</td>
+                            <td>
+                                <span class="badge badge-danger">已下架</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>波音999</td>
+                            <td>新年快樂</td>
+                            <td>87</td>
+                            <td>2019/08/08</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>空中巴士168</td>
+                            <td>準備好了嗎孩子們?</td>
+                            <td>543</td>
+                            <td>2019/09/28</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>波音369</td>
+                            <td>是的船長!!!!</td>
+                            <td>444</td>
+                            <td>2019/11/11</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination justify-content-center mt-5">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Prev</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> 留言打賞紀錄</div>
+            <div class="card-body">
+                <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>被打賞會員名稱</th>
+                            <th>被打賞留言內容</th>
+                            <th>此留言累積打賞金額</th>
+                            <th>留言發佈日期</th>
+                            <th>此留言內容狀態</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>波音123</td>
+                            <td>打賞我的人每人一份雞排</td>
+                            <td>1548</td>
+                            <td>2019/04/26</td>
+                            <td>
+                                <span class="badge badge-danger">已下架</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>空中巴士888</td>
+                            <td>母豬母豬，夜裡哭哭</td>
+                            <td>666</td>
+                            <td>2019/06/04</td>
+                            <td>
+                                <span class="badge badge-danger">已下架</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>波音999</td>
+                            <td>國家安全，人民有錢</td>
+                            <td>87</td>
+                            <td>2019/08/08</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>空中巴士168</td>
+                            <td>2021還在聽的+1</td>
+                            <td>543</td>
+                            <td>2019/09/28</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>波音369</td>
+                            <td>你當作台灣人塑膠做的喔~</td>
+                            <td>444</td>
+                            <td>2019/11/11</td>
+                            <td>
+                                <span class="badge badge-success">正常</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination justify-content-center mt-5">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Prev</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- end -->
+            </div>
+        </main>
+
+    </div>
+    <footer class="app-footer">
+        <div>
+          <a href="#">Air-Plan</a>
+          <span>&copy; 2020 creativeLabs.</span>
+        </div>
+        <div class="ml-auto">
+          <span>Powered by</span>
+          <a href="#">Air-Plan</a>
+        </div>
+      </footer>
+    <!-- CoreUI and necessary plugins-->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/pace.min.js"></script>
+    <script src="./js/perfect-scrollbar.min.js"></script>
+    <script src="./js/coreui.min.js"></script>
+</body>
+
+</html>
